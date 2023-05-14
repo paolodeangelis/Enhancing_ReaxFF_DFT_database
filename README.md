@@ -50,6 +50,7 @@ You can install the required Python packages using pip:
 pip install -r requirements.txt
 ```
 > **Warning**
+>
 > Make sure to have the appropriate licenses and installations of SCM Amsterdam Modeling Suite and any other necessary software for running simulations.
 
 ## Folder Structure
@@ -57,23 +58,28 @@ pip install -r requirements.txt
 The repository has the following folder structure:
 
 ```
-├── database.db
+.
+├── LICENSE
 ├── README.md
-├── reaxff_files
-│   ├── parameters.prm
-│   └── reactive_force_field.geo
-└── web_interface
-    ├── index.html
-    └── scripts.js
+├── requirements.txt
+├── assets
+├── data
+│   └── LiF.db
+├── notebooks
+└── tools
+    └── plasm_experimental
 ```
 
-- `database.db`: This is the SQLite database file containing the retraining data for the ReaxFF force field.
-- `reaxff_files`: This folder contains the ReaxFF parameter and force field files required for the force field calculations.
-  - `parameters.prm`: The ReaxFF parameter file.
-  - `reactive_force_field.geo`: The ReaxFF force field file.
-- `web_interface`: This folder contains the web interface files for interacting with the database.
-  - `index.html`: The HTML file for the web interface.
-  - `scripts.js`: The JavaScript file for the web interface.
+- `LICENSE`: This file contains the license information for the repository (CC BY 4.0). It specifies the terms and conditions under which the contents of the repository are distributed and used.
+- `README.md`: This file.
+- `requirements.txt`: This file lists the required Python packages and their versions. (see [installation section](#installation))
+- `assets`: This folder contains any additional assets, such as images or documentation, related to the repository.
+- `data`: 
+  - `LiF.db`: file is an SQLite database file. It contains the retraining data for the ReaxFF force field specifically for the inorganic compound LiF.
+- `notebooks`: This folder is dedicated to Jupyter notebooks that demonstrate the usage and analysis of the database. It can be used as a starting point for exploring and manipulating the data.
+- `tools`:
+  - `plasm_experimental`: This subfolder houses experimental tools or scripts that can be used for experimental data analysis or simulations. It may contain scripts specific to the LiF database or ReaxFF simulations.
+
 
 ## Interacting with the Database
 

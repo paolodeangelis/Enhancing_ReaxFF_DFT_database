@@ -119,9 +119,9 @@ If you would like to contribute to the Enhancing ReaxFF DFT Database, feel free 
 The contents of this repository are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
 
 <hr width="100%">
-<p style="text-align:left;">
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0; height:35px" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-<span style="float:right;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0; height:35px" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+   <span style="float:right;">
     &nbsp;
     <a target="_blank" href="https://www.big-map.eu/">
         <img style="height:35px" src="assets/img//logo-bigmap.png" alt="BIG MAP site" >
@@ -134,8 +134,8 @@ The contents of this repository are licensed under the [Creative Commons Attribu
     <a target="_blank" href="https://www.polito.it/">
         <img style="height:35px" src="assets/img//logo-polito.png" alt="POLITO site" >
     </a>
-    </span>
-</p>
+</span>
+</div>
 
 <!-- [![CC BY 4.0][cc-by-image]][cc-by] -->
 

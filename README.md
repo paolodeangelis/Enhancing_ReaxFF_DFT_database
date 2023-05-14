@@ -26,22 +26,31 @@
     </a>
 </p>
 
-This repository contains the database used for retraining the ReaxFF force field for the inorganic compound LiF. The database is intended to enhance the accuracy and reliability of ReaxFF calculations for LiF.
+This repository contains the database used for retraining the ReaxFF force field for the inorganic compound LiF. 
+The database is intended to enhance the accuracy and reliability of ReaxFF calculations for LiF, which results and method was published on the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
+
+This database was make using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
 
 ## Installation
 
-To use the database and interact with it, you need to have the following Python requirements installed:
+To use the database and interact with it, ensure that you have the following Python requirements installed:
 
-- Python 3.6 or above
-- ASE (Atomic Simulation Environment) library
-- ReaxFF library
+**Minimum Requirements:**
+- Python 3.9 or above
+- Atomic Simulation Environment (ASE) library
+- Jupyter Lab
+
+**Requirements for Rerunning or Performing New Simulations:**
+- SCM (Software for Chemistry & Materials) Amsterdam Modeling Suite
+- PLAMS (Python Library for Automating Molecular Simulation) library
 
 You can install the required Python packages using pip:
 
 ```shell
-pip install ase
-pip install reaxff
+pip install -r requirements.txt
 ```
+> **Warning**
+> Make sure to have the appropriate licenses and installations of SCM Amsterdam Modeling Suite and any other necessary software for running simulations.
 
 ## Folder Structure
 
@@ -123,16 +132,16 @@ The contents of this repository are licensed under the [Creative Commons Attribu
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0; height:35px" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
    <span style="float:right;">
     &nbsp;
-    <a target="_blank" href="https://www.big-map.eu/">
-        <img style="height:35px" src="assets/img//logo-bigmap.png" alt="BIG MAP site" >
+    <a rel="big-map" href="https://www.big-map.eu/">
+        <img style="border-width:0; height:35px" src="assets/img//logo-bigmap.png" alt="BIG MAP site" >
     </a>
     &nbsp;
-    <a target="_blank" href="https://areeweb.polito.it/ricerca/small/">
-        <img style="height:35px" src="assets/img//logo-small.png" alt="SMALL site" >
+    <a rel="small" href="https://areeweb.polito.it/ricerca/small/">
+        <img style="border-width:0; height:35px" src="assets/img//logo-small.png" alt="SMALL site" >
     </a>
     &nbsp;
-    <a target="_blank" href="https://www.polito.it/">
-        <img style="height:35px" src="assets/img//logo-polito.png" alt="POLITO site" >
+    <a rel="polito"href="https://www.polito.it/">
+        <img style="border-width:0; height:35px" src="assets/img//logo-polito.png" alt="POLITO site" >
     </a>
 </span>
 </div>
@@ -142,3 +151,5 @@ The contents of this repository are licensed under the [Creative Commons Attribu
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+[article-doi]: https://doi.org/TBD
+[enhancing-reaxFF-repository]: https://github.com/paolodeangelis/Enhancing_ReaxFF

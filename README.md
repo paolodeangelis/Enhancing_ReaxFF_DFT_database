@@ -26,7 +26,7 @@
     </a>
 </p>
 
-This repository contains the database used for retraining the ReaxFF force field for the inorganic compound LiF. 
+This repository contains the database used for retraining the ReaxFF force field for the inorganic compound LiF.
 The database is intended to enhance the accuracy and reliability of ReaxFF calculations for LiF, which results and method was published on the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
 
 This database was make using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
@@ -74,7 +74,7 @@ The repository has the following folder structure:
 - `README.md`: This file.
 - `requirements.txt`: This file lists the required Python packages and their versions. (see [installation section](#installation))
 - `assets`: This folder contains any additional assets, such as images or documentation, related to the repository.
-- `data`: 
+- `data`:
   - `LiF.db`: file is an SQLite database file. It contains the retraining data for the ReaxFF force field specifically for the inorganic compound LiF.
 - `notebooks`: This folder is dedicated to Jupyter notebooks that demonstrate the usage and analysis of the database. It can be used as a starting point for exploring and manipulating the data.
 - `tools`:
@@ -113,14 +113,14 @@ To interact with the database using the ASE Python interface, you can use the fo
 from ase.db import connect
 
 # Connect to the database
-db = connect('database.db')
+db = connect("database.db")
 
 # Query the database
 results = db.select('formula = "LiF"')
 
 # Iterate over the results
 for row in results:
-    print(f'ID: {row.id}, Energy: {row.energy}')
+    print(f"ID: {row.id}, Energy: {row.energy}")
 ```
 
 Modify the code according to your specific needs to perform desired operations on the database.
@@ -132,6 +132,13 @@ If you would like to contribute to the Enhancing ReaxFF DFT Database, feel free 
 ## License
 
 The contents of this repository are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
+
+## Acknowledgements
+
+This project has received funding from the European Union’s [Horizon 2020 research and innovation programme](https://ec.europa.eu/programmes/horizon2020/en) under grant agreement [No 957189](https://cordis.europa.eu/project/id/957189).
+The project is part of [BATTERY 2030+](https://battery2030.eu/), the large-scale European research initiative for inventing the sustainable batteries of the future.
+
+The authors also acknowledge that the simulation results of this database have been achieved using the [DECI](https://prace-ri.eu/hpc-access/deci-access/) resource [ARCHER2](https://www.archer2.ac.uk/) based in UK at [EPCC](https://www.epcc.ed.ac.uk/) with support from the [PRACE](https://prace-ri.eu/) aisbl.
 
 <hr width="100%">
 <div style="display: flex; justify-content: space-between; align-items: center;">

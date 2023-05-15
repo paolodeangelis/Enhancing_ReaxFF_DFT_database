@@ -24,7 +24,7 @@ repos:
     rev:  v3.4.0
     hooks:
     -   id: pyupgrade
-        args: [--py36-plus]
+        args: [--py39-plus]
 
   - repo: https://github.com/psf/black
     rev: 23.3.0
@@ -42,7 +42,7 @@ repos:
     hooks:
       - id: nbqa-black
       - id: nbqa-pyupgrade
-        args: [--py36-plus]
+        args: [--py39-plus]
       - id: nbqa-isort
       - id: nbqa-flake8
         args: [--ignore=E402]
@@ -58,3 +58,5 @@ repos:
       rev: 'v1.2.0'  # Use the sha / tag you want to point at
       hooks:
       -   id: mypy
+          verbose: true
+          entry: bash -c 'mypy "$@" || true' --

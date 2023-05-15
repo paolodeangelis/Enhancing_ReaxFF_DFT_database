@@ -6,3 +6,4 @@ numpy==1.24.3
 pandas==2.0.1
 plams==1.5.1
 scipy==1.10.1
+pre-commit

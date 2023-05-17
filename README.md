@@ -1,35 +1,18 @@
-# Enhancing ReaxFF DFT database
-<p style="text-align:left;">
-    <a target="_blank" href="https://python.org"><img
-        src="https://img.shields.io/badge/Python-3.9+-blue?logo=python&amp;logoColor=white"
-        alt="Made with Python" />
-    </a>
-    <a target="_blank" href="https://www.linux.org/"><img
-        src="https://img.shields.io/badge/OS-Linux-orange?logo=linux&amp;logoColor=white"
-        alt="OS - Linux" />
-    </a>
-    <a target="_blank" href="/CONTRIBUTING.md"><img
-        src="https://img.shields.io/badge/contributions-open-green"
-        alt="Contributions - welcome" />
-    </a>
-    <a target="_blank" href="https://github.com/psf/black"><img
-        src="https://img.shields.io/badge/code%20style-black-000000.svg"
-        alt="Code style - black" />
-    </a>
-    <a target="_blank" href="https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg"><img
-        src="https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg"
-        alt="pre-commit.ci status" />
-    </a>
-    <a target="_blank" href="http://creativecommons.org/licenses/by/4.0/"><img
-        src="https://img.shields.io/badge/license-CC%20BY%204.0-lightgray"
-        alt="License - CC BY 4.0" />
-    </a>
-</p>
+# Enhancing the ReaxFF DFT database
+[![Data FAIR](https://custom-icon-badges.demolab.com/badge/data-FAIR-blue?logo=database&logoColor=white)](https://www.nature.com/articles/sdata201618)
+[![Made with Python](https://custom-icon-badges.demolab.com/badge/Python-3.9+-blue?logo=python&amp;logoColor=white)](https://python.org)
+[![OS - Linux](https://custom-icon-badges.demolab.com/badge/OS-Linux-orange?logo=linux&amp;logoColor=white)](https://www.linux.org/)
+[![Contributions - welcome](https://custom-icon-badges.demolab.com/badge/contributions-open-green?logo=code-of-conduct&logoColor=white)](CONTRIBUTING.md)
+[![Code style - black](https://custom-icon-badges.demolab.com/badge/code%20style-black-000000?logo=code&logoColor=white)](https://github.com/psf/black)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)
+[![License - CC BY 4.0](https://custom-icon-badges.demolab.com/badge/license-CC--BY%204.0-lightgray?logo=law&logoColor=white)](LICENSE)
 
-This repository contains the database used for retraining the ReaxFF force field for the inorganic compound LiF.
-The database is intended to enhance the accuracy and reliability of ReaxFF calculations for LiF, which results and method was published on the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
 
-This database was make using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
+
+This repository contains the database used to retrain the ReaxFF force field for LiF, an inorganic compound.
+The purpose of the database is to improve the accuracy and reliability of ReaxFF calculations for LiF. The results and method used were published in the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
+
+This database was made using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
 
 ## Installation
 
@@ -64,28 +47,30 @@ The repository has the following folder structure:
 ├── requirements.txt
 ├── assets
 ├── data
-│   └── LiF.db
+│   ├── LiF.db
+│   ├── LiF.json
+│   └── LiF.yaml
 ├── notebooks
 └── tools
     └── plasm_experimental
 ```
 
-- `LICENSE`: This file contains the license information for the repository (CC BY 4.0). It specifies the terms and conditions under which the contents of the repository are distributed and used.
+- `LICENSE`: This file contains the license information for the repository (CC BY 4.0). It specifies the terms and conditions under which the repository's contents are distributed and used.
 - `README.md`: This file.
 - `requirements.txt`: This file lists the required Python packages and their versions. (see [installation section](#installation))
 - `assets`: This folder contains any additional assets, such as images or documentation, related to the repository.
 - `data`:
-  - `LiF.db`: file is an SQLite database file. It contains the retraining data for the ReaxFF force field specifically for the inorganic compound LiF.
+  - `LiF.db`: file is an SQLite database file. It includes the retraining data for the ReaxFF force field, specifically for the inorganic compound LiF.
 - `notebooks`: This folder is dedicated to Jupyter notebooks that demonstrate the usage and analysis of the database. It can be used as a starting point for exploring and manipulating the data.
 - `tools`:
-  - `plasm_experimental`: This subfolder houses experimental tools or scripts that can be used for experimental data analysis or simulations. It may contain scripts specific to the LiF database or ReaxFF simulations.
+  - `plasm_experimental`: This subfolder houses tools and scripts that can be used for experiments, analyses, or re-run simulations of the database. It may contain scripts specific to the LiF database or ReaxFF simulations.
 
 
 ## Interacting with the Database
 
-There are three ways to interact with the database: using the ASE db terminal command, the web interface, and the ASE Python interface.
+There are three ways to interact with the database: using the ASE db command-line, the web interface, and the ASE Python interface.
 
-### ASE db Terminal Command
+### ASE db Command-line 
 
 To interact with the database using the ASE db terminal command, follow these steps:
 
@@ -133,7 +118,7 @@ If you would like to contribute to the Enhancing ReaxFF DFT Database, feel free 
 
 The contents of this repository are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
 
-## Acknowledgements
+## Acknowledgments
 
 This project has received funding from the European Union’s [Horizon 2020 research and innovation programme](https://ec.europa.eu/programmes/horizon2020/en) under grant agreement [No 957189](https://cordis.europa.eu/project/id/957189).
 The project is part of [BATTERY 2030+](https://battery2030.eu/), the large-scale European research initiative for inventing the sustainable batteries of the future.

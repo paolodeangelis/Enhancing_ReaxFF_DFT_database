@@ -1,0 +1,321 @@
+{
+    "title": "LiF Dataset for ReaxFF parametrization",
+    "keys": {
+        "id": {
+            "name": "ID",
+            "description": "Uniqe row ID",
+            "unit": null,
+            "values": "A integer number starting from 1",
+            "type": "int"
+        },
+        "ctime": {
+            "name": "Creation time",
+            "description": "Creation time of the data (for simulation it coincide with the runtime)",
+            "unit": "yr",
+            "values": "A floating-point number representing the creation time of the data as the time elapsed since January 1, 2000, in years",
+            "type": "float"
+        },
+        "formula": {
+            "name": "Formula",
+            "description": "Chemical formula of the system",
+            "unit": null,
+            "values": "String of the chemical formula of the system",
+            "type": "str"
+        },
+        "pbc": {
+            "name": "PBC",
+            "description": "Periodic boundary conditions",
+            "unit": null,
+            "values": "List with boolean value for each dimension where PBC is applied (e.g. [True, False, True] means PBC is applied in x-direction, y-direction and z-direction)",
+            "type": "List[bool]"
+        },
+        "user": {
+            "name": "Username",
+            "description": "Username or full name of the user who created the data",
+            "unit": null,
+            "values": {
+                "Paolo De Angelis": {
+                    "name": "Paolo",
+                    "surname": "De Angelis",
+                    "email": "paolo.deangelis@polito.it",
+                    "institution": "Politecntico di Torino",
+                    "country": "Italy"
+                }
+            },
+            "type": "str"
+        },
+        "calculator": {
+            "name": "Calculator",
+            "description": "ASE-calculator name",
+            "unit": null,
+            "values": "Name of the ASE-calculator and engine used to calculate the system (e.g `ams/band` means AMS calcumatlor with BAND engine)",
+            "type": "str"
+        },
+        "energy": {
+            "name": "Energy",
+            "description": "Total energy of the system from the calculation",
+            "unit": "eV",
+            "values": "A floating point number representing the total energy in eV",
+            "type": "float"
+        },
+        "natoms": {
+            "name": "Number of atoms",
+            "description": "Number of atoms",
+            "unit": null,
+            "values": "A integer number representing the number of atoms",
+            "type": "int"
+        },
+        "fmax": {
+            "name": "Maximum force",
+            "description": "Maximum force",
+            "unit": "eV/\u00c5",
+            "values": "A floating point number representing the maximum force module in eV/\u00c5",
+            "type": "float"
+        },
+        "smax": {
+            "name": "Maximum stress",
+            "description": "Maximum stress on unit cell",
+            "unit": "eV/\u00c5\u00b3",
+            "values": "A floating point number representing the maximum stress module in eV/\u00c5\u00b3",
+            "type": "float"
+        },
+        "charge": {
+            "name": "Charge",
+            "description": "Net charge in unit cell",
+            "unit": "|e|",
+            "values": "A floating point number representing the net charge in the unit cell",
+            "type": "float"
+        },
+        "mass": {
+            "name": "Mass",
+            "description": "Sum of atomic masses in unit cell",
+            "unit": "au",
+            "values": "A floating point number representing the sum of atomic masses in the unit cell in atomic units",
+            "type": "float"
+        },
+        "magmom": {
+            "name": "Magnetic moment",
+            "description": "Magnetic moment",
+            "unit": "\u03bc_B",
+            "values": "A floating point number representing the magnetic moment (for this LiF  dataset it is always empty)",
+            "type": "float"
+        },
+        "unique_id": {
+            "name": "Unique ID",
+            "description": "Random (unique) ID",
+            "unit": null,
+            "values": "A integer number representing the random (unique) ID",
+            "type": "int"
+        },
+        "volume": {
+            "name": "Volume",
+            "description": "Volume of unit cell",
+            "unit": "\u00c5\u00b3",
+            "values": "A floating point number representing the volume of the unit cell in \u00c5\u00b3",
+            "type": "float"
+        },
+        "functional": {
+            "name": "XC Fuctional",
+            "description": "Exchange-and-correlation functional",
+            "unit": "",
+            "values": "String of the XC functional used in the calculation, the single XC functional is written in the format `[XC Type]/[XC Name]` (e.g. `GGA/PBE`), if multiple functional was used they are separated by a comma (e.g. `GGA/PBE,LDA/VWN,MetaGGA/TPSS`)",
+            "type": "str"
+        },
+        "fermi_energy": {
+            "name": "Fermi Energy",
+            "description": "Fermi Energy (N.B. is not the Fermi Level) which indicates the energy of non intereacting fermions in the sistem (Fermi gas) at 0 K",
+            "unit": "eV",
+            "values": "A floating point number representing the Fermi Energy in eV",
+            "type": "float"
+        },
+        "homo_energy": {
+            "name": "HOMO energy",
+            "description": "Highest Occupied Molecular Orbital energy",
+            "unit": "eV",
+            "values": "A floating point number representing the HOMO energy in eV",
+            "type": "float"
+        },
+        "lumo_energy": {
+            "name": "LUMO energy",
+            "description": "Lowest Unoccupied Molecular Orbital energy",
+            "unit": "eV",
+            "values": "A floating point number representing the LUMO energy in eV",
+            "type": "float"
+        },
+        "band_gap": {
+            "name": "Band gap energy",
+            "description": "Band gap energy (for LiF is the HOMO energy - LUMO energy)",
+            "unit": "eV",
+            "values": "A floating point number representing the band gap energy in eV",
+            "type": "float"
+        },
+        "runtime": {
+            "name": "Run Time",
+            "description": "Simulation start date",
+            "unit": null,
+            "values": "A string representing the start date of the simulation whit format `%b%d-%Y %H:%M:%S` (e.g. 04May-2023 08:10:22)",
+            "type": "srt"
+        },
+        "elapsed": {
+            "name": "Elapsed Time",
+            "description": "Elapsed Time",
+            "unit": "s",
+            "values": "A integer representing the total simulation time in seconds",
+            "type": "int"
+        },
+        "name": {
+            "name": "System Name",
+            "description": "System Name",
+            "unit": null,
+            "values": "A sting used as name of the system",
+            "type": "str"
+        },
+        "sim_name": {
+            "name": "Simulation Name",
+            "description": "Simulation Name",
+            "unit": null,
+            "values": "A sting used as name of the simulation",
+            "type": "str"
+        },
+        "subset_name": {
+            "name": "Subset Name",
+            "description": "Name of the subset of configuration",
+            "unit": null,
+            "values": {
+                "ab-initio md 300K": "Frames from 300K ab initio MD of LiF",
+                "ab-initio md 500K": "Frames from 300K ab initio MD of LiF",
+                "ab-initio md amorphous crystal": "Frames from 2700K ab initio MD of LiF",
+                "interstitial defects": "System where N atomos of Li wass add in the interstitial sites",
+                "pure elements unit cell": "Pure Li or F unit cell",
+                "slabs": "Slabs of {100}, {110}, {111}, {121} cristal plane with differnts thickness",
+                "strained lattice": "Systems where the differnt strain (\u03b5_xx, \u03b5_xy, \u03b5_xx + \u03b5_yy + \u03b5_zz) and differnt value of strain was applied",
+                "substitutional defects": "Systems where Li of F atoms are randomly substitut",
+                "supercell": "Super cell of size 2x1x1, 2x2x1,2x2x2, 3x2x2, 3x3x2, and 3x3x3",
+                "unit cell": "Simulation of unitecel from Material Project",
+                "vacancy defects": "System where crystal Li atoms are randomly removed"
+            },
+            "type": "str"
+        },
+        "run_script": {
+            "name": "Run Script",
+            "description": "Full AMS scrip for running the simulation",
+            "unit": null,
+            "values": "Full script stored as a string",
+            "type": "str"
+        },
+        "input_script": {
+            "name": "Input Script",
+            "description": "Full input scrip for running the simulation",
+            "unit": null,
+            "values": "Full script stored as a string",
+            "type": "str"
+        },
+        "success": {
+            "name": "Simulation status",
+            "description": "Simulation end status",
+            "unit": null,
+            "values": {
+                "True": "The simulation end without errors",
+                "False": "The simulation end with errors or never started"
+            },
+            "type": "bool"
+        },
+        "used_in": {
+            "name": "Used in",
+            "description": "Indicate in which set the data was used",
+            "unit": null,
+            "values": {
+                "training": "Data used in the training set",
+                "test": "Data used in the test set",
+                "none": "Data not used"
+            },
+            "type": "str"
+        },
+        "task": {
+            "name": "Task",
+            "description": "Simulation task",
+            "unit": null,
+            "values": {
+                "geometry optimization": "Geoemetry Optimization simulation",
+                "geometry pre-optimization": "Geoemetry Optimization simulation with \"cheap\" settings",
+                "initial configuration": "Initial configuration of the simulation",
+                "single point": "Single Pointe (energy and forces from SCF)"
+            },
+            "type": "str"
+        },
+        "space_group": {
+            "name": "Space Group Symbols",
+            "description": "Full International Space Group Symbol. The notation is a LaTeX-like string, with screw axes being represented by an underscore.",
+            "unit": null,
+            "values": "The space group notation in a LaTeX-like string, with screw axes being represented by an underscore. (see pymatgen.symmetry.groups.SpaceGroup (https://pymatgen.org/pymatgen.symmetry.groups.html#pymatgen.symmetry.groups.SpaceGroup))",
+            "type": "str"
+        }
+    },
+    "data": {
+        "DOS": {
+            "name": "DOS",
+            "description": "Density of states as `dictionary` with both the energy and frequency of the histogram",
+            "unit": null,
+            "values": {
+                "Energy [eV]": {
+                    "description": "Center value of the energy intervals (bins) usude for the calculation of the DOS",
+                    "unit": "eV",
+                    "values": "An numpy array with floating-point values of the energy",
+                    "type": "numpy.NDarray[float]"
+                },
+                "Total DOS [1/eV]": {
+                    "description": "Density of state for each bin",
+                    "unit": "1/eV",
+                    "values": "An numpy array with floating-point values of the density of states",
+                    "type": "numpy.NDarray[float]"
+                }
+            },
+            "type": "dict"
+        },
+        "History": {
+            "name": "History",
+            "description": "Simulation history containing the scala quatitirs evolution during the simulation, i.e. totoal energy, max force, force RMS, max step, step RMS and max stress per atom",
+            "unit": null,
+            "values": {
+                "Energy [eV]": {
+                    "description": "Total energy of the system",
+                    "unit": "eV",
+                    "values": "An numpy array with floating-point of the evolution of the energy during the simulation",
+                    "type": "Union[numpy.NDarray[float], None]"
+                },
+                "Max force [eV/A]": {
+                    "description": "Maximum force",
+                    "unit": "eV/\u00c5",
+                    "values": "An numpy array with floating-point of the evolution of the maximum force norme during the simulation",
+                    "type": "Union[numpy.NDarray[float], None]"
+                },
+                "RMS force [eV/A]": {
+                    "description": "Root Mean Squere of the forces",
+                    "unit": "eV/\u00c5",
+                    "values": "An numpy array with floating-point of the evolution of the RMS of the forces during the simulation",
+                    "type": "Union[numpy.NDarray[float], None]"
+                },
+                "Max step [A]": {
+                    "description": "Maximum atom displacement",
+                    "unit": "\u00c5",
+                    "values": "An numpy array with floating-point of the evolution of the maximum atom dispacement during the simulation",
+                    "type": "Union[numpy.NDarray[float], None]"
+                },
+                "RMS step [A]": {
+                    "description": "Root Mean Squere of the atoms dispacement",
+                    "unit": "\u00c5",
+                    "values": "An numpy array with floating-point of the evolution of the RMS of the atoms dispacement during the simulation",
+                    "type": "Union[numpy.NDarray[float], None]"
+                },
+                "Max stress per atom [eV/A^3]": {
+                    "description": "Maximum stress per atom",
+                    "unit": "eV/\u00c5\u00b3",
+                    "values": "An numpy array with floating-point of the evolution of the maximum  stress per atoms during the simulation",
+                    "type": "Union[numpy.NDarray[float], None]"
+                }
+            },
+            "type": "dict"
+        }
+    },
+    "rows": 706
+}

@@ -341,12 +341,8 @@ def update_metadata(db: SQLite3Database, verbose: bool = True) -> None:
             message(f"No new values in key `{key}`", verbose, msg_type="info", end="\n")
         if updated:
             message("Saving  metadata...", verbose, msg_type="info", end="\r")
-            write_json_metadata(
-                os.path.join(db_folder, db_name + ".json"), metadata_new
-            )
-            write_yaml_metadata(
-                os.path.join(db_folder, db_name + ".yaml"), metadata_new
-            )
+            write_json_metadata(os.path.join(db_folder, db_name + ".json"), metadata_new)
+            write_yaml_metadata(os.path.join(db_folder, db_name + ".yaml"), metadata_new)
             message("Metadata saved     ", verbose, msg_type="info", end="\n")
     metadata_new["rows"] = db.count()
     message("Saving  metadata...", verbose, msg_type="info", end="\r")

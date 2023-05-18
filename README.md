@@ -23,7 +23,7 @@ To use the database and interact with it, ensure that you have the following Pyt
 - Atomic Simulation Environment (ASE) library
 - Jupyter Lab
 
-**Requirements for Rerunning or Performing New Simulations:**
+**Requirements for Re-running or Performing New Simulations:**
 - SCM (Software for Chemistry & Materials) Amsterdam Modeling Suite
 - PLAMS (Python Library for Automating Molecular Simulation) library
 
@@ -68,9 +68,9 @@ The repository has the following folder structure:
 
 ## Interacting with the Database
 
-There are three ways to interact with the database: using the ASE db command-line, the web interface, and the ASE Python interface.
+There are three ways to interact with the database: using the ASE db command line, the web interface, and the ASE Python interface.
 
-### ASE db Command-line 
+### ASE db Command-line
 
 To interact with the database using the ASE db terminal command, follow these steps:
 

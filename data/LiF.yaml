@@ -108,8 +108,8 @@ keys:
         type: str
     fermi_energy:
         name: Fermi Energy
-        description: Fermi Energy (N.B. is not the Fermi Level) which indicates the energy of non intereacting fermions in
-            the sistem (Fermi gas) at 0 K
+        description: Fermi Energy (N.B. is not the Fermi Level), which indicates the energy of non-interacting fermions in
+            the system (Fermi gas) at 0 K
         unit: eV
         values: A floating point number representing the Fermi Energy in eV
         type: float
@@ -239,7 +239,7 @@ data:
         type: dict
     History:
         name: History
-        description: Simulation history containing the scala quatitirs evolution during the simulation, i.e. totoal energy,
+        description: Simulation history containing the scalar quantities evolution during the simulation, i.e. total energy,
             max force, force RMS, max step, step RMS and max stress per atom
         unit: null
         values:

@@ -247,12 +247,8 @@ def get_history(
         maxstres = np.zeros(nentries)
         for i in range(nentries):
             energy[i] = Units.convert(history_data[f"Energy({i+1:d})"], "au", "eV")
-            maxf[i] = Units.convert(
-                history_data[f"maxGrad({i+1:d})"], "hartree/bohr", "eV/angstrom"
-            )
-            rmsf[i] = Units.convert(
-                history_data[f"rmsGrad({i+1:d})"], "hartree/bohr", "eV/angstrom"
-            )
+            maxf[i] = Units.convert(history_data[f"maxGrad({i+1:d})"], "hartree/bohr", "eV/angstrom")
+            rmsf[i] = Units.convert(history_data[f"rmsGrad({i+1:d})"], "hartree/bohr", "eV/angstrom")
             maxstep[i] = Units.convert(history_data[f"maxStep({i+1:d})"], "bohr", "A")
             rmsstep[i] = Units.convert(history_data[f"rmsStep({i+1:d})"], "bohr", "A")
             maxstres[i] = Units.convert(
@@ -435,9 +431,7 @@ def add_sim_to_db(
     if isinstance(runtime, datetime):
         runtime_str = runtime.strftime("%a %d %b %Y, %H:%M:%S")
         if use_runtime:
-            atoms_row.ctime = (
-                runtime - dt.datetime(2000, 1, 1)
-            ).total_seconds() / YEAR  # time since January 1. 2000
+            atoms_row.ctime = (runtime - dt.datetime(2000, 1, 1)).total_seconds() / YEAR  # time since January 1. 2000
         else:
             atoms_row.ctime = ase.db.core.now()
     else:
@@ -453,9 +447,7 @@ def add_sim_to_db(
     space_group = get_space_group(job)
     fermi_energy, homo_energy, lumo_energy, band_gap = get_band_info(job)
     functional_list = []
-    for xc_type, name in job.settings["input"][job.results.engine_names()[0]][
-        "xc"
-    ].items():
+    for xc_type, name in job.settings["input"][job.results.engine_names()[0]]["xc"].items():
         functional_list.append(f"{xc_type}/{name}")
     functional = ", ".join(functional_list)
     # Additional data
@@ -486,9 +478,7 @@ def add_sim_to_db(
     )
 
 
-def add_ic_to_db(
-    db: SQLite3Database, job: AMSJob, subset_name: str, use_runtime: bool = True
-) -> None:
+def add_ic_to_db(db: SQLite3Database, job: AMSJob, subset_name: str, use_runtime: bool = True) -> None:
     """Add initial configuration ASE Atoms to the database from an AMSJob object.
 
     Args:
@@ -513,9 +503,7 @@ def add_ic_to_db(
     if isinstance(runtime, datetime):
         runtime_str = runtime.strftime("%a %d %b %Y, %H:%M:%S")
         if use_runtime:
-            atoms_row.ctime = (
-                runtime - dt.datetime(2000, 1, 1)
-            ).total_seconds() / YEAR  # time since January 1. 2000
+            atoms_row.ctime = (runtime - dt.datetime(2000, 1, 1)).total_seconds() / YEAR  # time since January 1. 2000
         else:
             atoms_row.ctime = ase.db.core.now()
     else:

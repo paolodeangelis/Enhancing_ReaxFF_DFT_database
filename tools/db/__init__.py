@@ -24,7 +24,12 @@ Module Name: db
 Authors: Paolo De Angelis (paolo.deangelis@polito.it)
 Copyright (c) 2023 Paolo De Angelis
 """
-from .metadata import update_metadata, get_yaml_metadata, get_json_metadata, get_unique_values
+from .metadata import (
+    get_json_metadata,
+    get_unique_values,
+    get_yaml_metadata,
+    update_metadata,
+)
 from .store_job import add_to_db
 
 __all__ = ["add_to_db", "update_metadata", "get_yaml_metadata", "get_json_metadata"]

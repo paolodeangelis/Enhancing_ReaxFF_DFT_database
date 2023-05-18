@@ -357,11 +357,7 @@ class AMSCalculator(Calculator):
     @property
     def implemented_properties(self):
         """Returns the list of properties that this calculator has implemented."""
-        return [
-            extractor.name
-            for extractor in self.extractors
-            if extractor.check_settings(self.settings)
-        ]
+        return [extractor.name for extractor in self.extractors if extractor.check_settings(self.settings)]
 
     def calculate(self, atoms=None, properties=["energy"], system_changes=all_changes):
         """Calculate the requested properties. If atoms is not set, it will reuse the last known Atoms object."""
@@ -380,9 +376,7 @@ class AMSCalculator(Calculator):
             raise ValueError("No atoms object was set.")
 
         if not config.init:
-            raise RuntimeError(
-                "Call plams.init() before calculating results using AMSCalculator."
-            )
+            raise RuntimeError("Call plams.init() before calculating results using AMSCalculator.")
 
         molecule = fromASE(self.atoms, set_charge=True)
         ams_results = self._get_ams_results(molecule, properties)
@@ -411,9 +405,7 @@ class AMSCalculator(Calculator):
         """Populate the `self.results` dictionary by having extractors act on an `AMSResults` object."""
         for extractor in self.extractors:
             if extractor.check_settings(job_settings):
-                self.results[extractor.name] = extractor.extract(
-                    ams_results, self.atoms
-                )
+                self.results[extractor.name] = extractor.extract(ams_results, self.atoms)
 
     def _get_ams_results(self, molecule, properties):
         raise NotImplementedError("Subclasses of AMSCalculator should implement this")
@@ -476,9 +468,7 @@ class AMSPipeCalculator(AMSCalculator):
     def _get_ams_results(self, molecule, properties):
         job_settings = self._get_job_settings(properties)
         if self.worker is None:
-            self.worker = AMSWorker(
-                self.worker_settings, use_restart_cache=self.restart
-            )
+            self.worker = AMSWorker(self.worker_settings, use_restart_cache=self.restart)
         # AMSWorker expects no engine definition at this point.
         s = Settings()
         s.input.ams = job_settings.input.ams
@@ -512,10 +502,6 @@ class AMSJobCalculator(AMSCalculator):
         # settings = self.settings.copy()
         job_settings = self._get_job_settings(properties)
         if self.restart and self.prev_ams_results:
-            job_settings.input.ams.EngineRestart = self.prev_ams_results.rkfpath(
-                file="engine"
-            )
+            job_settings.input.ams.EngineRestart = self.prev_ams_results.rkfpath(file="engine")
 
-        return AMSJob(
-            name=self.name + str(self.counter), molecule=molecule, settings=job_settings
-        ).run()
+        return AMSJob(name=self.name + str(self.counter), molecule=molecule, settings=job_settings).run()

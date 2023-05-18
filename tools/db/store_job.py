@@ -143,11 +143,11 @@ def get_space_group(job: AMSJob) -> Union[str, None]:
         >>> get_space_group(job)
         'Pm-3m'
     """
-    search = re.search(r"(?<=LiF_)\S+(?=_)", job.name)
+    search = re.search(r"(?<=LiF_)\w+?\S\w+(?=_-\d_?)", job.name)
     if search is None:
-        search = re.search(r"(?<=F_)\S+(?=_)", job.name)
+        search = re.search(r"(?<=F_)\w+?\S\w+(?=_-?\d)", job.name)
     if search is None:
-        search = re.search(r"(?<=Li_)\S+(?=_)", job.name)
+        search = re.search(r"(?<=Li_)\w+?\S\w+(?=_-?\d)", job.name)
     if search is not None:
         spgroup = search.group()
     else:

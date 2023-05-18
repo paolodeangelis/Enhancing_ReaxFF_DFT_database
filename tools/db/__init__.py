@@ -9,9 +9,11 @@ the ADFSuite package to be installed.
 
 Modules:
 - `store_job`: Module containing functions for adding job information to the database.
+- `metadata`: Module containing functions for updating the metadata of the database.
 
 Usage:
 - Import the `add_to_db` function from this package to store job information in a database.
+- Import the `update_metadata` function from this package to update the metadata of the database.
 
 Example:
     from tools.db import add_to_db
@@ -23,5 +25,5 @@ Authors: Paolo De Angelis (paolo.deangelis@polito.it)
 Copyright (c) 2023 Paolo De Angelis
 """
 from .store_job import add_to_db
-
-__all__ = ["add_to_db"]
+from .metadata import update_metadata
+__all__ = ["add_to_db", "update_metadata"]

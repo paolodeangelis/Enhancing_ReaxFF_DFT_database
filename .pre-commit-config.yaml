@@ -59,4 +59,5 @@ repos:
       hooks:
       -   id: mypy
           verbose: true
+          additional_dependencies: ['types-PyYAML']
           entry: bash -c 'mypy "$@" || true' --

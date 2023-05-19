@@ -535,7 +535,7 @@ def add_to_db(
     job: AMSJob,
     subset_name: str,
     task: str,
-    user: str = None,
+    user: str = None,  # type: ignore
     add_ic: bool = False,
     use_runtime: bool = True,
     fulldataset_path: Any | None = None,
@@ -581,7 +581,7 @@ def add_to_db(
              4 | Paolo De Ange* | 1-LiF_P6_3mc_-3* | single point     | Li2F2   |  -19.209 |    True |      none
     """
     if user is None:
-        user = os.environ['USER']
+        user = os.environ["USER"]
     if add_ic:
         add_ic_to_db(db, job, subset_name, user, use_runtime=use_runtime)
         if verbose:

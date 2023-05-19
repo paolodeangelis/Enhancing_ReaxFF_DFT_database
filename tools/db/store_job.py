@@ -384,6 +384,7 @@ def add_sim_to_db(
     db: SQLite3Database,
     job: AMSJob,
     subset_name: str,
+    user: str,
     task: str,
     use_runtime: bool = True,
     fulldataset_path: Any | None = None,
@@ -395,6 +396,7 @@ def add_sim_to_db(
         db (SQLite3Database): The ASE SQLite3 database to add the information to.
         job (AMSJob): An AMSJob object containing the calculation results.
         subset_name (str): The name of the subset to which the job belongs.
+        user (str): Data point author.
         task (str): The task name associated with the job.
         use_runtime (bool, optional): Whether to use the runtime information as cration
                                       time of the data in the database. Defaults to True.
@@ -441,7 +443,7 @@ def add_sim_to_db(
         used_in = is_in_trainigset(job, fulldataset_path, trainigset_path)
     else:
         used_in = "none"
-    atoms_row.user = "Paolo De Angelis"
+    atoms_row.user = user
     atoms_row.calculator = "/".join(["ams"] + job.results.engine_names())
     atoms_row.calculator_parameters = job.settings.as_dict()
     space_group = get_space_group(job)
@@ -478,13 +480,14 @@ def add_sim_to_db(
     )
 
 
-def add_ic_to_db(db: SQLite3Database, job: AMSJob, subset_name: str, use_runtime: bool = True) -> None:
+def add_ic_to_db(db: SQLite3Database, job: AMSJob, subset_name: str, user: str, use_runtime: bool = True) -> None:
     """Add initial configuration ASE Atoms to the database from an AMSJob object.
 
     Args:
         db (SQLite3Database): The database object to add the information to.
         job (AMSJob): An AMSJob object containing the calculation results.
         subset_name (str): The name of the subset to which the job belongs.
+        user (str): Data point author.
         use_runtime (bool): Whether to use the runtime information from the job. Defaults to True.
 
     Returns:
@@ -511,7 +514,7 @@ def add_ic_to_db(db: SQLite3Database, job: AMSJob, subset_name: str, use_runtime
         atoms_row.ctime = ase.db.core.now()
     used_in = "none"
     task = "initial configuration"
-    atoms_row.user = "Paolo De Angelis"
+    atoms_row.user = user
     space_group = get_space_group(job)
     name = "-".join(job.name.split("-")[1:])
     # Write
@@ -532,6 +535,7 @@ def add_to_db(
     job: AMSJob,
     subset_name: str,
     task: str,
+    user: str = None,
     add_ic: bool = False,
     use_runtime: bool = True,
     fulldataset_path: Any | None = None,
@@ -545,6 +549,8 @@ def add_to_db(
         job (AMSJob): An AMSJob object containing the calculation results.
         subset_name (str): The name of the subset to which the job belongs.
         task (str): The task name associated with the job.
+        user (str | None, optional): Data point author, if None it will use the value from
+                                     the enviroment variable `USER`. Defaults to None.
         add_ic (bool, optional): Whether to add initial configuration information. Defaults to False.
         use_runtime (bool, optional): Whether to use the runtime information as cration
                                       time of the data in the database. Defaults to True.
@@ -574,8 +580,10 @@ def add_to_db(
             id |      user      |       name       |       task       | formula |  energy  | success |  used_in
              4 | Paolo De Ange* | 1-LiF_P6_3mc_-3* | single point     | Li2F2   |  -19.209 |    True |      none
     """
+    if user is None:
+        user = os.environ['USER']
     if add_ic:
-        add_ic_to_db(db, job, subset_name, use_runtime=use_runtime)
+        add_ic_to_db(db, job, subset_name, user, use_runtime=use_runtime)
         if verbose:
             last_id = db.count()
             row = db.get(id=last_id)
@@ -586,6 +594,7 @@ def add_to_db(
         db,
         job,
         subset_name,
+        user,
         task,
         use_runtime=use_runtime,
         fulldataset_path=fulldataset_path,

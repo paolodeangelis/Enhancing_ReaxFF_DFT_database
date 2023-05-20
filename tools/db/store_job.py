@@ -27,7 +27,7 @@ from scm.plams import AMSJob
 from scm.plams.interfaces.molecule.ase import toASE as SCMtoASE
 from scm.plams.tools.units import Units
 
-from ..plasm_experimental.ase_calculator import AMSCalculator
+from ..plams_experimental.ase_calculator import AMSCalculator
 
 # Please note that the above line of code assumes that you have installed the SCM PLAMS library (version 1.5.1)
 # and the ADFSuite package. the `AMSCalculator` is not yet released in the PLASM library.

@@ -5,7 +5,7 @@ It includes additional calculators, utilities, and enhancements that are still u
 The experimental functionalities are:
 - ASE_Calculator: A calculator for the ASE package.
 
-Module Name: plasm_experimental
+Module Name: plams_experimental
 Authors: Paolo De Angelis (paolo.deangelis@polito.it)
 Copyright (c) 2023 Paolo De Angelis
 """

@@ -8,71 +8,70 @@ As a contributor, it is important to adhere to these principles and pay attentio
 Thus when you add the simulation to the database be sure to specify the arguments `subset_name`, `task`, `user`.
 Additionally, when updating metadata, use the `update_metadata` function to ensure that the information accurately reflects the latest changes and additions.
 
-
 ## Data submission process
 
-1.    **Fork** the repository on GitHub by clicking the "Fork" button.
+1.  **Fork** the repository on GitHub by clicking the "Fork" button.
 
-2.    Clone your forked repository locally using the following command:
+2.  Clone your forked repository locally using the following command:
 
-      ```bash
-      git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
-      ```
+    ```bash
+    git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
+    ```
 
-3.    Make the necessary changes to your local repository.
+3.  Make the necessary changes to your local repository.
 
-4.    (Optional) Install the pre-commit hook to perform code checks before committing your changes.
+4.  (Optional) Install the pre-commit hook to perform code checks before committing your changes.
 
-5.    Pull and rebase any changes made by others to the main branch since you started working on your changes:
+5.  Pull and rebase any changes made by others to the main branch since you started working on your changes:
 
-      ```bash
-      git pull --rebase
-      ```
+    ```bash
+    git pull --rebase
+    ```
 
-6.    If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
+6.  If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
 
-      -  Run `git log` to find the commit ID of your first local commit.
-      -  Use the commit ID to rebase and squash the commits by running:
+    *   Run `git log` to find the commit ID of your first local commit.
 
-         ```bash
-         git rebase <FIRST-COMMIT-ID> -i
-         ```
+    *   Use the commit ID to rebase and squash the commits by running:
 
-      -  Mark all of the commits except the first as "squash" in the interactive rebase window.
+        ```bash
+        git rebase <FIRST-COMMIT-ID> -i
+        ```
 
-      Note: We prefer a single commit as the first revision of a PR for easier review.
+    *   Mark all of the commits except the first as "squash" in the interactive rebase window.
 
-7.    Push your changes to your forked repository:
+    Note: We prefer a single commit as the first revision of a PR for easier review.
 
-   ```bash
-   git push -f fork master
-   ```
+7.  Push your changes to your forked repository:
 
-   Note: Use the `-f` option if you have used your fork for previous PRs.
+```bash
+git push -f fork master
+```
 
-8.    Go to your forked repository on GitHub and click the "New pull request" button to create a new pull request.
+Note: Use the `-f` option if you have used your fork for previous PRs.
 
-9.    If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
+8.  Go to your forked repository on GitHub and click the "New pull request" button to create a new pull request.
 
-      ```bash
-      git push fork main
-      ```
+9.  If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
 
-      Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
+    ```bash
+    git push fork main
+    ```
 
-10.   If additional changes have been made to the main branch and you need to update your fork, pull the changes as a merge (not a rebase):
+    Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
 
-      ```bash
-      git pull
-      git push fork main
-      ```
+10. If additional changes have been made to the main branch and you need to update your fork, pull the changes as a merge (not a rebase):
 
-      Note: Using merges instead of rebases allows GitHub to hide the content of merge commits, reducing noise in the commit history.
+    ```bash
+    git pull
+    git push fork main
+    ```
 
-11.   Once the reviewer approves your change with LGTM, it's time to submit. Use the "Squash and merge" option when merging to the main branch. We use squash merging to maintain a clean commit history in the master branch.
+    Note: Using merges instead of rebases allows GitHub to hide the content of merge commits, reducing noise in the commit history.
 
-12.   For a step-by-step tutorial on contributing to GitHub, check out [How to Contribute on GitHub](https://www.dataschool.io/how-to-contribute-on-github/).
+11. Once the reviewer approves your change with LGTM, it's time to submit. Use the "Squash and merge" option when merging to the main branch. We use squash merging to maintain a clean commit history in the master branch.
 
+12. For a step-by-step tutorial on contributing to GitHub, check out [How to Contribute on GitHub](https://www.dataschool.io/how-to-contribute-on-github/).
 
 ## How pre-commit
 
@@ -82,7 +81,7 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 It helps ensure code quality by catching potential issues such as typos or style mistakes.
 
 Besicaly force lazy developers to control his code to avoid stupid
- typos or style mistakes.
+typos or style mistakes.
 
 <p align="center">
  <img
@@ -94,7 +93,6 @@ Besicaly force lazy developers to control his code to avoid stupid
 ### Why I should use `pre-commit`?
 
 When coding, it's easy to follow your own style and logic, which can sometimes result in chaotic and hard-to-read code. `pre-commit` helps mitigate this by enforcing code checks, preventing situations like the infamous "Spaghetti Code."
-
 
 Thus, with `pre-commit` we are trying to basically avoid the situation below:
 
@@ -108,31 +106,30 @@ Thus, with `pre-commit` we are trying to basically avoid the situation below:
 ### How to use `pre-commit`
 
 Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pre-commit` hooks.
- Follow these steps to set it up:
+Follow these steps to set it up:
 
-   1. Install `pre-commit` using pip:
+1.  Install `pre-commit` using pip:
 
-      ```bash
-      pip install pre-commit
-      ```
+    ```bash
+    pip install pre-commit
+    ```
 
-   2. Activate `pre-commit` to run before every `git commit`:
+2.  Activate `pre-commit` to run before every `git commit`:
 
-      ```bash
-      pre-commit install
-      ```
+    ```bash
+    pre-commit install
+    ```
 
-   3. Test it by running:
+3.  Test it by running:
 
-      ```bash
-      pre-commit run
-      ```
+    ```bash
+    pre-commit run
+    ```
 
 > **Note**
 >
->To commit without running `pre-commit`, you can use the `git commit --no-verify` command.
+> To commit without running `pre-commit`, you can use the `git commit --no-verify` command.
 > However, this will fail in the remote repository due to the "Continous Integration" workflow that checks all changes on every push and pull.
-
 
 #### Hooks list:
 

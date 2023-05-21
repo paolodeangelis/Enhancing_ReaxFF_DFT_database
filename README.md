@@ -14,6 +14,19 @@ The purpose of the database is to improve the accuracy and reliability of ReaxFF
 
 This database was made using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- [Interacting with the Database](#interacting-with-the-database)
+  - [ASE db Command-line](#ase-db-command-line)
+  - [Web Interface](#web-interface)
+  - [ASE Python Interface](#ase-python-interface)
+- [Contributing](#contributing)
+- [How to Cite](#how-to-cite)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Installation
 
 To use the database and interact with it, ensure that you have the following Python requirements installed:
@@ -142,7 +155,24 @@ For a more detailed example, refer to the notebook `notebooks/browsing_db.ipynb`
 
 ## Contributing
 
-If you would like to contribute to the Enhancing ReaxFF DFT Database, feel free to submit pull requests or open issues in the repository.
+If you would like to contribute to the Enhancing ReaxFF DFT Database by performing new simulations and expanding the database, please follow the guidelines outlined in the [Contribution Guidelines](CONTRIBUTING.md). You are welcome to submit pull requests or open issues in the repository. Your contributions are greatly appreciated!
+
+## How to Cite
+
+If you use the database or the tools provided in this repository for your work, please cite it using the following BibTeX entry:
+
+```bibtex
+@misc{MPInterface,
+  title        = {{Enhancing ReaxFF DFT database}},
+  author       = {De Angelis, Paolo and Cappabianca, Roberta and Asinari, Pietro and Chiavazzo, Eliodoro},
+  year         = {2023},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/paolodeangelis/Enhancing_ReaxFF_DFT_database},
+  url          = {https://github.com/paolodeangelis/Enhancing_ReaxFF_DFT_database},
+  doi          = {#TODO TO BE DEFINED}
+}
+```
 
 ## License
 

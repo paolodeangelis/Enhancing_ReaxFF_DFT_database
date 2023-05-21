@@ -59,7 +59,6 @@ The repository has the following folder structure:
     ├── db
     ├── plams_experimental
     └── scripts
-        └── install_jmol.py
 ```
 
 - `CONTRIBUTING.md`: This file provides guidelines and instructions for contributing to the repository. It outlines the contribution process, coding conventions, and other relevant information for potential contributors.
@@ -88,21 +87,38 @@ There are three ways to interact with the database: using the ASE db command lin
 
 To interact with the database using the ASE db terminal command, follow these steps:
 
-1. Open a terminal and navigate to the directory containing the `database.db` file.
+1. Open a terminal and navigate to the directory containing the `LiF.db` file.
 2. Run the following command to start the ASE db terminal:
 
    ```shell
-   ase db database.db
+   ase db LiF.db
    ```
 
-3. You can now use the available commands in the terminal to query and manipulate the database.
+3. You can now use the available commands in the terminal to query and manipulate the database. More information can be found in the [ASE database documentation](https://wiki.fysik.dtu.dk/ase/ase/db/db.html).
 
 ### Web Interface
 
 To interact with the database using the web interface, follow these steps:
 
-1. Open the `index.html` file located in the `web_interface` folder using a web browser.
-2. Use the provided forms and buttons in the web interface to query and modify the database.
+1. Open a terminal and navigate to the directory containing the `LiF.db` file.
+2. Run the following command to start the ASE db terminal:
+
+   ```shell
+   ase db -w LiF.db
+   ```
+
+3. Open your web browser and connect to the local server at http://127.0.0.1:5000.
+
+![Example of Web Interface](assets/img/ase_db_web.gif)
+
+> **Warning**
+>
+> To visualize the 3D structure of the system, you need to install the [JMOL extension](https://jmol.sourceforge.net/). You can use the script `tools/scripts/install_jmol.py` to automatically download and install it:
+>
+> ```shell
+> cd tools/scripts/
+> python install_jmol.py
+> ```
 
 ### ASE Python Interface
 
@@ -122,7 +138,7 @@ for row in results:
     print(f"ID: {row.id}, Energy: {row.energy}")
 ```
 
-Modify the code according to your specific needs to perform desired operations on the database.
+For a more detailed example, refer to the notebook `notebooks/browsing_db.ipynb`. To learn how to perform a simulation, check the notebook `notebooks/running_simulation.ipynb`.
 
 ## Contributing
 

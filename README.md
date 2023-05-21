@@ -162,7 +162,7 @@ If you would like to contribute to the Enhancing ReaxFF DFT Database by performi
 If you use the database or the tools provided in this repository for your work, please cite it using the following BibTeX entry:
 
 ```bibtex
-@misc{MPInterface,
+@misc{EnhReaxFFdatabase,
   title        = {{Enhancing ReaxFF DFT database}},
   author       = {De Angelis, Paolo and Cappabianca, Roberta and Asinari, Pietro and Chiavazzo, Eliodoro},
   year         = {2023},

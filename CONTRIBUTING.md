@@ -1,4 +1,4 @@
-## Contributing Guidelines
+# Contributing Guidelines
 
 Thank you for considering contributing to our database repository. Your contributions are valuable and help improve the quality of our work.
 
@@ -10,39 +10,39 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 
 ## Data submission process
 
-1.  **Fork** the repository on GitHub by clicking the "Fork" button.
+1. **Fork** the repository on GitHub by clicking the "Fork" button.
 
-2.  Clone your forked repository locally using the following command:
+2. Clone your forked repository locally using the following command:
 
-    ```bash
-    git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
-    ```
+   ```bash
+   git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
+   ```
 
-3.  Make the necessary changes to your local repository.
+3. Make the necessary changes to your local repository.
 
-4.  (Optional) Install the pre-commit hook to perform code checks before committing your changes.
+4. (Optional) Install the pre-commit hook to perform code checks before committing your changes.
 
-5.  Pull and rebase any changes made by others to the main branch since you started working on your changes:
+5. Pull and rebase any changes made by others to the main branch since you started working on your changes:
 
-    ```bash
-    git pull --rebase
-    ```
+   ```bash
+   git pull --rebase
+   ```
 
-6.  If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
+6. If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
 
-    *   Run `git log` to find the commit ID of your first local commit.
+   * Run `git log` to find the commit ID of your first local commit.
 
-    *   Use the commit ID to rebase and squash the commits by running:
+   * Use the commit ID to rebase and squash the commits by running:
 
-        ```bash
-        git rebase <FIRST-COMMIT-ID> -i
-        ```
+     ```bash
+     git rebase <FIRST-COMMIT-ID> -i
+     ```
 
-    *   Mark all of the commits except the first as "squash" in the interactive rebase window.
+   * Mark all of the commits except the first as "squash" in the interactive rebase window.
 
-    Note: We prefer a single commit as the first revision of a PR for easier review.
+   Note: We prefer a single commit as the first revision of a PR for easier review.
 
-7.  Push your changes to your forked repository:
+7. Push your changes to your forked repository:
 
 ```bash
 git push -f fork master
@@ -50,15 +50,15 @@ git push -f fork master
 
 Note: Use the `-f` option if you have used your fork for previous PRs.
 
-8.  Go to your forked repository on GitHub and click the "New pull request" button to create a new pull request.
+8. Go to your forked repository on GitHub and click the "New pull request" button to create a new pull request.
 
-9.  If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
+9. If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
 
-    ```bash
-    git push fork main
-    ```
+   ```bash
+   git push fork main
+   ```
 
-    Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
+   Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
 
 10. If additional changes have been made to the main branch and you need to update your fork, pull the changes as a merge (not a rebase):
 
@@ -108,41 +108,41 @@ Thus, with `pre-commit` we are trying to basically avoid the situation below:
 Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pre-commit` hooks.
 Follow these steps to set it up:
 
-1.  Install `pre-commit` using pip:
+1. Install `pre-commit` using pip:
 
-    ```bash
-    pip install pre-commit
-    ```
+   ```bash
+   pip install pre-commit
+   ```
 
-2.  Activate `pre-commit` to run before every `git commit`:
+2. Activate `pre-commit` to run before every `git commit`:
 
-    ```bash
-    pre-commit install
-    ```
+   ```bash
+   pre-commit install
+   ```
 
-3.  Test it by running:
+3. Test it by running:
 
-    ```bash
-    pre-commit run
-    ```
+   ```bash
+   pre-commit run
+   ```
 
 > **Note**
 >
 > To commit without running `pre-commit`, you can use the `git commit --no-verify` command.
 > However, this will fail in the remote repository due to the "Continous Integration" workflow that checks all changes on every push and pull.
 
-#### Hooks list:
+#### Hooks list
 
-| Hook | auto-fix |
-| :---: | :---: |
-| [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) | ✅ |
-| [isort](https://github.com/timothycrosley/isort) | ✅ |
-| [pyupgrade](https://github.com/asottile/pyupgrade) | ✅ |
-| [black](https://github.com/psf/black) | ✅ |
-| [blacken-docs](https://github.com/asottile/blacken-docs) | ✅ |
-| [nbQA](https://github.com/nbQA-dev/nbQA) | ✅ and ❌ |
-| [flake8](https://github.com/PyCQA/flake8) | ❌ |
-| [mypy](https://github.com/pre-commit/mirrors-mypy) | ❌ |
+|                                Hook                                | auto-fix |
+| :----------------------------------------------------------------: | :------: |
+| [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) |     ✅    |
+|          [isort](https://github.com/timothycrosley/isort)          |     ✅    |
+|         [pyupgrade](https://github.com/asottile/pyupgrade)         |     ✅    |
+|                [black](https://github.com/psf/black)               |     ✅    |
+|      [blacken-docs](https://github.com/asottile/blacken-docs)      |     ✅    |
+|              [nbQA](https://github.com/nbQA-dev/nbQA)              |  ✅ and ❌ |
+|              [flake8](https://github.com/PyCQA/flake8)             |     ❌    |
+|         [mypy](https://github.com/pre-commit/mirrors-mypy)         |     ❌    |
 
 > **Note**
 >

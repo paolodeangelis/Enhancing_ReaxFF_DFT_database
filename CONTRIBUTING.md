@@ -110,23 +110,23 @@ Thus, with `pre-commit` we are trying to basically avoid the situation below:
 Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pre-commit` hooks.
  Follow these steps to set it up:
 
-1. Install `pre-commit` using pip:
+   1. Install `pre-commit` using pip:
 
-   ```bash
-   pip install pre-commit
-   ```
+      ```bash
+      pip install pre-commit
+      ```
 
-2. Activate `pre-commit` to run before every `git commit`:
+   2. Activate `pre-commit` to run before every `git commit`:
 
-   ```bash
-   pre-commit install
-   ```
+      ```bash
+      pre-commit install
+      ```
 
-3. Test it by running:
+   3. Test it by running:
 
-   ```bash
-   pre-commit run
-   ```
+      ```bash
+      pre-commit run
+      ```
 
 > **Note**
 >

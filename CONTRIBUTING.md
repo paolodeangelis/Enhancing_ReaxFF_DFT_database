@@ -55,7 +55,7 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 9.    If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
 
       ```bash
-      git push fork master
+      git push fork main
       ```
 
       Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
@@ -64,7 +64,7 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 
       ```bash
       git pull
-      git push fork master
+      git push fork main
       ```
 
       Note: Using merges instead of rebases allows GitHub to hide the content of merge commits, reducing noise in the commit history.

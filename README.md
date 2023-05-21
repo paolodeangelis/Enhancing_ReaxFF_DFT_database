@@ -5,6 +5,7 @@
 [![Contributions - welcome](https://custom-icon-badges.demolab.com/badge/contributions-open-green?logo=code-of-conduct&logoColor=white)](CONTRIBUTING.md)
 [![Code style - black](https://custom-icon-badges.demolab.com/badge/code%20style-black-000000?logo=code&logoColor=white)](https://github.com/psf/black)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba532ddf0c974cccab358938902104d9)](https://app.codacy.com/gh/paolodeangelis/Enhancing_ReaxFF_DFT_database/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![License - CC BY 4.0](https://custom-icon-badges.demolab.com/badge/license-CC--BY%204.0-lightgray?logo=law&logoColor=white)](LICENSE)
 
 

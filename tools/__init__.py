@@ -1,26 +1,18 @@
 """
-Handling AMSJob simulations and the ASE SQLite3 database.
+Enhancing ReaxFF Database Tools.
 
-This package provides functions for working with AMSJob objects from the SCM PLAMS library and store it in the
-ASE SQLite3 database ase ASE AtomsRow objects.
+This package provides functions for handling AMSJob simulations from the SCM PLAMS library
+and storing the results in the ASE SQLite3 database as ASE AtomsRow objects.
 
-TODO change
-
-Note: The functions in this package require the SCM PLAMS library (version 1.5.1), ASE library and
-the ADFSuite package to be installed.
+Note: The functions in this package require the following dependencies to be installed:
+SCM PLAMS library (version 1.5.1), ASE library, and ADFSuite package.
 
 Modules:
-- `store_job`: Module containing functions for adding job information to the database.
+- `db`: Contains functions for adding, retrieving, and analyzing simulation data in the database.
+- `plams_experimental`: Provides functions for interacting with the SCM PLAMS library
+using ASE calculators.
 
-Usage:
-- Import the `add_to_db` function from this package to store job information in a database.
-
-Example:
-    from tools.db import add_to_db
-
-    # Usage of the add_to_db function to store the job into a database.
-
-Module Name: tools
+Package Name: tools
 Authors: Paolo De Angelis (paolo.deangelis@polito.it)
 Copyright (c) 2023 Paolo De Angelis
 """

@@ -16,7 +16,7 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 2. Clone your forked repository locally using the following command:
 
    ```bash
-   git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_databasegit
+   git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
    ```
 
 3. Make the necessary changes to your local repository.
@@ -144,8 +144,8 @@ Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pr
 | [black](https://github.com/psf/black) | ✅ |
 | [blacken-docs](https://github.com/asottile/blacken-docs) | ✅ |
 | [nbQA](https://github.com/nbQA-dev/nbQA) | ✅ and ❌ |
-| [flake8](https://gitlab.com/pycqa/flake8) | ❌ |
-| [mypy](https://gitlab.com/pycqa/flake8) | ❌ |
+| [flake8](https://github.com/PyCQA/flake8) | ❌ |
+| [mypy](https://github.com/pre-commit/mirrors-mypy) | ❌ |
 
 > **Note**
 >

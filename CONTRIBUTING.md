@@ -2,8 +2,8 @@
 
 Thank you for considering contributing to our database repository. Your contributions are valuable and help improve the quality of our work.
 
-Our repository follows the [FAIR (Findable, Accessible, Interoperable, and Reusable)](https://www.nature.com/articles/sdata201618) principles, which promote the usability and long-term value of data and resources. 
-As a contributor, it is important to adhere to these principles and pay attention to metadata and data quality. 
+Our repository follows the [FAIR (Findable, Accessible, Interoperable, and Reusable)](https://www.nature.com/articles/sdata201618) principles, which promote the usability and long-term value of data and resources.
+As a contributor, it is important to adhere to these principles and pay attention to metadata and data quality.
 
 Thus when you add the simulation to the database be sure to specify the arguments `subset_name`, `task`, `user`.
 Additionally, when updating metadata, use the `update_metadata` function to ensure that the information accurately reflects the latest changes and additions.
@@ -30,14 +30,14 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
    ```
 
 6. If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
-   
+
    - Run `git log` to find the commit ID of your first local commit.
    - Use the commit ID to rebase and squash the commits by running:
-     
+
      ```bash
      git rebase <FIRST-COMMIT-ID> -i
      ```
-     
+
    - Mark all of the commits except the first as "squash" in the interactive rebase window.
 
    Note: We prefer a single commit as the first revision of a PR for easier review.
@@ -78,7 +78,7 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 
 ### What it is `pre-commit`?
 
-`pre-commit` is a mechanism provided by the version control system Git that allows to execute code checks right before committing your changes. 
+`pre-commit` is a mechanism provided by the version control system Git that allows to execute code checks right before committing your changes.
 It helps ensure code quality by catching potential issues such as typos or style mistakes.
 
 Besicaly force lazy developers to control his code to avoid stupid
@@ -107,7 +107,7 @@ Thus, with `pre-commit` we are trying to basically avoid the situation below:
 
 ### How to use `pre-commit`
 
-Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pre-commit` hooks. 
+Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pre-commit` hooks.
  Follow these steps to set it up:
 
 1. Install `pre-commit` using pip:
@@ -130,7 +130,7 @@ Our repository includes a configuration file (`.pre-commit-config.yaml`) for `pr
 
 > **Note**
 >
->To commit without running `pre-commit`, you can use the `git commit --no-verify` command. 
+>To commit without running `pre-commit`, you can use the `git commit --no-verify` command.
 > However, this will fail in the remote repository due to the "Continous Integration" workflow that checks all changes on every push and pull.
 
 

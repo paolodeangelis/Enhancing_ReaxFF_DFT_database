@@ -54,7 +54,7 @@ def install(package: str) -> list[str]:
     return installed_packages
 
 
-def message(msg: str, type: Optional[str] = None, end: str = "\n") -> None:
+def message(msg: str, msg_type: Optional[str] = None, end: str = "\n") -> None:
     """
     Display a formatted message.
 
@@ -63,11 +63,11 @@ def message(msg: str, type: Optional[str] = None, end: str = "\n") -> None:
         type Optional[str]: Type of the message (info, error, warning).
         end (str): The end character to use (default: newline).
     """
-    if type == "info":
+    if msg_type == "info":
         sys.stdout.write("\x1b[0;34m" + "[Info]:    " + msg + "\x1b[0m" + end)
-    elif type == "error":
+    elif msg_type == "error":
         sys.stderr.write("\x1b[0;31m" + "[Error]:   " + msg + "\x1b[0m" + end)
-    elif type == "warning":
+    elif msg_type == "warning":
         sys.stderr.write("\x1b[0;33m" + "[Warning]: " + msg + "\x1b[0m" + end)
     else:
         sys.stdout.write("\x1b[4m" + msg.strip() + "\x1b[0m" + end)
@@ -89,52 +89,52 @@ try:
     import ase.db
 except ImportError:
     if not install_pkg:
-        message("`ase` package is not installed", type="error")
+        message("`ase` package is not installed", msg_type="error")
         message(
             "1) Please make sure that you are using the correct Python interpreter or virtual environment.",
-            type="error",
+            msg_type="error",
         )
         message(
-            "2) If you are sure that you are using the correct Python interpreter or virtual environment,", type="error"
+            "2) If you are sure that you are using the correct Python interpreter or virtual environment,", msg_type="error"
         )
         message(
             "   please install it using `pip install ase`, or use the -i or --install-pkg option when running",
-            type="error",
+            msg_type="error",
         )
         message(
             "   this script",
-            type="error",
+            msg_type="error",
         )
         exit()
     else:
-        message("`ase` package is not installed, installing it now", type="warning")
+        message("`ase` package is not installed, installing it now", msg_type="warning")
         install("ase==3.22.1")
         import ase.db
 
-        message("`ase` package installed and imported", type="info")
+        message("`ase` package installed and imported", msg_type="info")
 
 try:
     from tqdm import tqdm
     from tqdm.utils import CallbackIOWrapper
 except ImportError:
     if not install_pkg:
-        message("`tqdm` package is not installed", type="error")
+        message("`tqdm` package is not installed", msg_type="error")
         message(
             "Please install it using `pip install tqdm`, or use the -i or --install-pkg option when running",
-            type="error",
+            msg_type="error",
         )
         message(
             "   this script",
-            type="error",
+            msg_type="error",
         )
         exit()
     else:
-        message("`tqdm` package is not installed, installing it now", type="warning")
+        message("`tqdm` package is not installed, installing it now", msg_type="warning")
         install("tqdm")
         from tqdm import tqdm
         from tqdm.utils import CallbackIOWrapper
 
-        message("`tqdm` package installed and imported", type="info")
+        message("`tqdm` package installed and imported", msg_type="info")
 
 
 def download(url: str, fname: str, msg: str) -> None:
@@ -188,37 +188,37 @@ def extractall(fzip: str, dest: str, msg: str = "Extracting") -> None:
 
 
 if os.path.isfile(OUTFILE):
-    message(f"File {OUTFILE} already exists, skipping download", type="warning")
-    message("Do you want to re-download the file? (y/n): ", type="warning", end="")
+    message(f"File {OUTFILE} already exists, skipping download", msg_type="warning")
+    message("Do you want to re-download the file? (y/n): ", msg_type="warning", end="")
     answer = input()
     if answer.lower() == "y":
         os.remove(OUTFILE)
-        message(f"File {OUTFILE} removed", type="warning")
+        message(f"File {OUTFILE} removed", msg_type="warning")
 
 if not os.path.isfile(OUTFILE):
-    message(f"Downloading Jmol binary file from SourceForge ({OUTFILE})", type="info")
+    message(f"Downloading Jmol binary file from SourceForge ({OUTFILE})", msg_type="info")
     download(URL, OUTFILE, "Downloading Jmol")
 
-message("Extracting Jmol binary file", type="info")
+message("Extracting Jmol binary file", msg_type="info")
 if os.path.isdir(OUTDIR):
-    message(f"Folder {OUTDIR} already exists, it will be removed before extraction", type="warning")
+    message(f"Folder {OUTDIR} already exists, it will be removed before extraction", msg_type="warning")
     rmtree(OUTDIR)
-    message(f"Folder {OUTDIR} deleted", type="warning")
+    message(f"Folder {OUTDIR} deleted", msg_type="warning")
 
 extractall(OUTFILE, "Jmol", msg="Extracting")
 jsmol_zip_path = os.path.join("Jmol", "jmol-16.1.11", "jsmol.zip")
 jsmol_unzip_path = os.path.join("Jmol", "jmol-16.1.11", ".")
-message("Extracting Jsmol binary file", type="info")
+message("Extracting Jsmol binary file", msg_type="info")
 extractall(jsmol_zip_path, jsmol_unzip_path, msg="Extracting")
-message("Installing jsmol into ASE database", type="info")
+message("Installing jsmol into ASE database", msg_type="info")
 
 src = os.path.abspath(os.path.join(jsmol_unzip_path, "jsmol"))
 dst = os.path.join(os.path.dirname(ase.db.__file__), "static", "jsmol")
 if os.path.islink(dst):
-    message("Symbolic link already exists, it will be removed", type="warning")
+    message("Symbolic link already exists, it will be removed", msg_type="warning")
     os.remove(dst)
-    message(f"Symbolic link {dst} removed", type="warning")
+    message(f"Symbolic link {dst} removed", msg_type="warning")
 os.symlink(src, dst)
-message("Symbolic link created:", type="info")
-message(f"{src} -> {dst}", type="info")
+message("Symbolic link created:", msg_type="info")
+message(f"{src} -> {dst}", msg_type="info")
 message(" DONE ".center(120, "="))

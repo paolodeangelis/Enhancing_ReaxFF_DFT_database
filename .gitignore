@@ -162,3 +162,5 @@ cython_debug/
 .vscode
 Jmol/
 Jmol*
+node_modules/
+package-lock.json

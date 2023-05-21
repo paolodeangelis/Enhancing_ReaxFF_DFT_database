@@ -56,6 +56,6 @@ repos:
       rev: 'v1.2.0'  # Use the sha / tag you want to point at
       hooks:
       -   id: mypy
-          verbose: true
-          additional_dependencies: ['types-PyYAML']
+          verbose: True
+          additional_dependencies: ['types-PyYAML', 'types-requests']
           entry: bash -c 'mypy "$@" || true' --

@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 .tool-versions
 .vscode
+Jmol/
+Jmol*

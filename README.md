@@ -9,7 +9,7 @@
 
 
 
-This repository contains the database used to retrain the ReaxFF force field for LiF, an inorganic compound.
+This repository contains the database used to re-parametrize the ReaxFF force field for LiF, an inorganic compound.
 The purpose of the database is to improve the accuracy and reliability of ReaxFF calculations for LiF. The results and method used were published in the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
 
 This database was made using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
@@ -42,6 +42,8 @@ The repository has the following folder structure:
 
 ```
 .
+├── CONTRIBUTING.md
+├── CREDITS.md
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
@@ -51,20 +53,32 @@ The repository has the following folder structure:
 │   ├── LiF.json
 │   └── LiF.yaml
 ├── notebooks
+│   ├── browsing_db.ipynb
+│   └── running_simulation.ipynb
 └── tools
-    └── plasm_experimental
+    ├── db
+    ├── plams_experimental
+    └── scripts
+        └── install_jmol.py
 ```
 
+- `CONTRIBUTING.md`: This file provides guidelines and instructions for contributing to the repository. It outlines the contribution process, coding conventions, and other relevant information for potential contributors.
+- `CREDITS.md`: This file acknowledges and credits the individuals or organizations that have contributed to the repository.
 - `LICENSE`: This file contains the license information for the repository (CC BY 4.0). It specifies the terms and conditions under which the repository's contents are distributed and used.
 - `README.md`: This file.
 - `requirements.txt`: This file lists the required Python packages and their versions. (see [installation section](#installation))
 - `assets`: This folder contains any additional assets, such as images or documentation, related to the repository.
-- `data`:
-  - `LiF.db`: file is an SQLite database file. It includes the retraining data for the ReaxFF force field, specifically for the inorganic compound LiF.
-- `notebooks`: This folder is dedicated to Jupyter notebooks that demonstrate the usage and analysis of the database. It can be used as a starting point for exploring and manipulating the data.
-- `tools`:
-  - `plasm_experimental`: This subfolder houses tools and scripts that can be used for experiments, analyses, or re-run simulations of the database. It may contain scripts specific to the LiF database or ReaxFF simulations.
-
+- `data`: This folder contains the data files used in the repository.
+  - `LiF.db`: This file is the SQLite database file that includes the DFT data used for the ReaxFF force field. Specifically, it contains data related to the inorganic compound LiF.
+  - `LiF.json`: This file provides the database metadata in a human-readable format using JSON.
+  - `LiF.yaml`: This file also contains the database metadata in a more human-readable format, still using YAML.
+- `notebooks`: This folder contains Jupyter notebooks that provide demonstrations and examples of how to use and analyze the database.
+  - `browsing_db.ipynb`: This notebook demonstrates how to handle, select, read, and understand the data points in the `LiF.db` database using the ASE database Python interface. It serves as a guide for exploring and navigating the database effectively.
+  - `running_simulation.ipynb`: In this notebook, you will find an example of how to get a data point from the `LiF.db` database and use it to perform a new simulation. The notebook showcases how to utilize either the [PLAMS](https://www.scm.com/doc/plams/index.html) library or the [AMSCalculator](https://www.scm.com/doc/plams/interfaces/amscalculator.html) and ASE Python library to conduct simulations based on the retrieved data and then store it as a new data point in the `LiF.db` database. It provides step-by-step instructions and code snippets for a seamless simulation workflow.
+- `tools`: This directory contains a collection of Python modules and scripts that are useful for reading, analyzing, and re-running simulations stored in the database. These tools are indispensable for ensuring that this repository adheres to the principles of **I**nteroperability and **R**eusability, as outlined by the [FAIR principles](https://www.go-fair.org/fair-principles/).
+  - `db`: This Python module provides functionalities for handling, reading, and storing data into the database.
+  - `plasm_experimental`: This Python module includes the necessary components for using the `AMSCalculator` with PLASM and the SCM software package, utilizing the ASE API. It facilitates running simulations, performing calculations.
+  - `scripts`: This directory contains additional scripts for dvanced usage scenarios of this repository.
 
 ## Interacting with the Database
 

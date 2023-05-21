@@ -11,38 +11,38 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 
 ## Data submission process
 
-1. **Fork** the repository on GitHub by clicking the "Fork" button.
+1.    **Fork** the repository on GitHub by clicking the "Fork" button.
 
-2. Clone your forked repository locally using the following command:
+2.    Clone your forked repository locally using the following command:
 
-   ```bash
-   git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
-   ```
+      ```bash
+      git clone https://github.com/<your-github-username>/Enhancing_ReaxFF_DFT_database.git
+      ```
 
-3. Make the necessary changes to your local repository.
+3.    Make the necessary changes to your local repository.
 
-4. (Optional) Install the pre-commit hook to perform code checks before committing your changes.
+4.    (Optional) Install the pre-commit hook to perform code checks before committing your changes.
 
-5. Pull and rebase any changes made by others to the main branch since you started working on your changes:
+5.    Pull and rebase any changes made by others to the main branch since you started working on your changes:
 
-   ```bash
-   git pull --rebase
-   ```
+      ```bash
+      git pull --rebase
+      ```
 
-6. If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
+6.    If you have committed multiple changes locally, squash them into a single commit before submitting a pull request (PR). You can do this by following these steps:
 
-   - Run `git log` to find the commit ID of your first local commit.
-   - Use the commit ID to rebase and squash the commits by running:
+      -  Run `git log` to find the commit ID of your first local commit.
+      -  Use the commit ID to rebase and squash the commits by running:
 
-     ```bash
-     git rebase <FIRST-COMMIT-ID> -i
-     ```
+         ```bash
+         git rebase <FIRST-COMMIT-ID> -i
+         ```
 
-   - Mark all of the commits except the first as "squash" in the interactive rebase window.
+      -  Mark all of the commits except the first as "squash" in the interactive rebase window.
 
-   Note: We prefer a single commit as the first revision of a PR for easier review.
+      Note: We prefer a single commit as the first revision of a PR for easier review.
 
-7. Push your changes to your forked repository:
+7.    Push your changes to your forked repository:
 
    ```bash
    git push -f fork master
@@ -50,28 +50,28 @@ Additionally, when updating metadata, use the `update_metadata` function to ensu
 
    Note: Use the `-f` option if you have used your fork for previous PRs.
 
-8. Go to your forked repository on GitHub and click the "New pull request" button to create a new pull request.
+8.    Go to your forked repository on GitHub and click the "New pull request" button to create a new pull request.
 
-9. If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
+9.    If your reviewers provide feedback, make the necessary changes locally, rerun the tests, and update your forked repository:
 
-    ```bash
-    git push fork master
-    ```
+      ```bash
+      git push fork master
+      ```
 
-    Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
+      Note: Do not squash commits after the PR has been sent, as it resets the state held by GitHub about what files each reviewer has seen.
 
-10. If additional changes have been made to the main branch and you need to update your fork, pull the changes as a merge (not a rebase):
+10.   If additional changes have been made to the main branch and you need to update your fork, pull the changes as a merge (not a rebase):
 
-    ```bash
-    git pull
-    git push fork master
-    ```
+      ```bash
+      git pull
+      git push fork master
+      ```
 
-    Note: Using merges instead of rebases allows GitHub to hide the content of merge commits, reducing noise in the commit history.
+      Note: Using merges instead of rebases allows GitHub to hide the content of merge commits, reducing noise in the commit history.
 
-11. Once the reviewer approves your change with LGTM, it's time to submit. Use the "Squash and merge" option when merging to the main branch. We use squash merging to maintain a clean commit history in the master branch.
+11.   Once the reviewer approves your change with LGTM, it's time to submit. Use the "Squash and merge" option when merging to the main branch. We use squash merging to maintain a clean commit history in the master branch.
 
-12. For a step-by-step tutorial on contributing to GitHub, check out [How to Contribute on GitHub](https://www.dataschool.io/how-to-contribute-on-github/).
+12.   For a step-by-step tutorial on contributing to GitHub, check out [How to Contribute on GitHub](https://www.dataschool.io/how-to-contribute-on-github/).
 
 
 ## How pre-commit

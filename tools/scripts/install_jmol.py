@@ -214,7 +214,7 @@ message("Installing jsmol into ASE database", type="info")
 
 src = os.path.abspath(os.path.join(jsmol_unzip_path, "jsmol"))
 dst = os.path.join(os.path.dirname(ase.db.__file__), "static", "jsmol")
-if os.path.isdir(dst):
+if os.path.islink(dst):
     message("Symbolic link already exists, it will be removed", type="warning")
     os.remove(dst)
     message(f"Symbolic link {dst} removed", type="warning")

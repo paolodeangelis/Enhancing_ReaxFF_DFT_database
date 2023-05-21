@@ -95,7 +95,8 @@ except ImportError:
             msg_type="error",
         )
         message(
-            "2) If you are sure that you are using the correct Python interpreter or virtual environment,", msg_type="error"
+            "2) If you are sure that you are using the correct Python interpreter or virtual environment,",
+            msg_type="error",
         )
         message(
             "   please install it using `pip install ase`, or use the -i or --install-pkg option when running",

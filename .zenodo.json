@@ -1,0 +1,90 @@
+{
+    "title":"Enhancing the ReaxFF DFT database",
+    "version":"0.1.0",
+    "description":"Database used for retraining the ReaxFF force field for the inorganic compound LiF.",
+    "creators":[
+       {
+          "name":"De Angelis, Paolo",
+          "affiliation":"Department of Energy “Galileo Ferraris”, Politecnico di Torino, Corso Duca Degli Abruzzi 24 10129 Torino, Italy",
+          "orcid":"0000-0003-1866-2988"
+       },
+       {
+          "name":"Cappabianca, Roberta",
+          "affiliation":"Department of Energy “Galileo Ferraris”, Politecnico di Torino, Corso Duca Degli Abruzzi 24 10129 Torino, Italy",
+          "orcid":"0000-0002-3789-9676"
+       },
+       {
+          "name":"Fasano, Matteo",
+          "affiliation":"Department of Energy “Galileo Ferraris”, Politecnico di Torino, Corso Duca Degli Abruzzi 24 10129 Torino, Italy",
+          "orcid":"0000-0002-3997-3681"
+       },
+       {
+          "name":"Asianri, Pietro",
+          "affiliation":"Department of Energy “Galileo Ferraris”, Politecnico di Torino, Corso Duca Degli Abruzzi 24 10129 Torino, Italy",
+          "orcid":"0000-0003-1814-3846"
+       },
+       {
+          "name":"Chiavazzo, Chiavazzo",
+          "affiliation":"Department of Energy “Galileo Ferraris”, Politecnico di Torino, Corso Duca Degli Abruzzi 24 10129 Torino, Italy",
+          "orcid":"0000-0001-6165-7434"
+       }
+    ],
+    "upload_type":"dataset",
+    "access_right":"open",
+    "license":"cc-by-4.0",
+    "prereserve_doi":true,
+    "communities":[
+       {
+          "identifier":"bigmap-h2020"
+       }
+    ],
+    "contributors":[
+       {
+          "name":"De Angelis, Paolo",
+          "type":[
+             "ProjectManager",
+             "DataCollector",
+             "DataManager"
+          ],
+          "orcid":"0000-0003-1866-2988"
+       },
+       {
+          "name":"Cappabianca, Roberta",
+          "type":"ProjectMember",
+          "orcid":"0000-0002-3789-9676"
+       },
+       {
+          "name":"Asianri, Pietro",
+          "type":"Supervisor",
+          "orcid":"0000-0003-1814-3846"
+       },
+       {
+          "name":"Chiavazzo, Chiavazzo",
+          "type":"Supervisor",
+          "orcid":"0000-0001-6165-7434"
+       }
+    ],
+    "language":"eng",
+    "keywords":[
+       "Density Functional Theory",
+       "DFT",
+       "Force Field",
+       "FF",
+       "Lithium fluoride",
+       "LiF",
+       "Reaxtive Force Field",
+       "ReaxFF",
+       "Solid electrolyte interphase",
+       "SEI",
+       "Lithium-ion battery",
+       "LIB",
+       "Atomic Simulation Environment",
+       "ASE",
+       "BIG-MAP",
+       "Reproducible research",
+       "Protocols"
+    ],
+    "grants":{
+       "id":"957189"
+    }
+ }

@@ -9,7 +9,7 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba532ddf0c974cccab358938902104d9)](https://app.codacy.com/gh/paolodeangelis/Enhancing_ReaxFF_DFT_database/dashboard?utm_source=gh\&utm_medium=referral\&utm_content=\&utm_campaign=Badge_grade)
 [![License - CC BY 4.0](https://custom-icon-badges.demolab.com/badge/license-CC--BY%204.0-lightgray?logo=law\&logoColor=white)](LICENSE)
-[![DOI](https://sandbox.zenodo.org/badge/DOI/10.5072/zenodo.1204707.svg)](https://doi.org/10.5072/zenodo.1204707)
+[![DOI](https://sandbox.zenodo.org/badge/DOI/10.5281/zenodo.7959121.svg)](https://doi.org/10.5281/zenodo.7959121)
 
 
 This repository contains the database used to re-parametrize the ReaxFF force field for LiF, an inorganic compound.
@@ -176,13 +176,13 @@ If you use the database or the tools provided in this repository for your work, 
                   Fasano, Matteo and
                   Asianri, Pietro and
                   Chiavazzo, Chiavazzo},
-  title        = {Enhancing the ReaxFF DFT database},
+  title        = {{Enhancing the ReaxFF DFT database}},
   month        = may,
   year         = 2023,
   publisher    = {Zenodo},
-  version      = {0.1.0},
+  version      = {1.0.0-beta},
   doi          = {10.5072/zenodo.1204707},
-  url          = {https://doi.org/10.5072/zenodo.1204707}
+  url          = {https://doi.org/10.5281/zenodo.7959121}
 }
 ```
 

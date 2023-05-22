@@ -5,9 +5,12 @@
 [![OS - Linux](https://custom-icon-badges.demolab.com/badge/OS-Linux-orange?logo=linux\&logoColor=white)](https://www.linux.org/)
 [![Contributions - welcome](https://custom-icon-badges.demolab.com/badge/contributions-open-green?logo=code-of-conduct\&logoColor=white)](CONTRIBUTING.md)
 [![Code style - black](https://custom-icon-badges.demolab.com/badge/code%20style-black-000000?logo=code\&logoColor=white)](https://github.com/psf/black)
+
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)](https://results.pre-commit.ci/badge/github/paolodeangelis/Enhancing_ReaxFF_DFT_database/main.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba532ddf0c974cccab358938902104d9)](https://app.codacy.com/gh/paolodeangelis/Enhancing_ReaxFF_DFT_database/dashboard?utm_source=gh\&utm_medium=referral\&utm_content=\&utm_campaign=Badge_grade)
 [![License - CC BY 4.0](https://custom-icon-badges.demolab.com/badge/license-CC--BY%204.0-lightgray?logo=law\&logoColor=white)](LICENSE)
+[![DOI](https://sandbox.zenodo.org/badge/DOI/10.5072/zenodo.1204707.svg)](https://doi.org/10.5072/zenodo.1204707)
+
 
 This repository contains the database used to re-parametrize the ReaxFF force field for LiF, an inorganic compound.
 The purpose of the database is to improve the accuracy and reliability of ReaxFF calculations for LiF. The results and method used were published in the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
@@ -167,15 +170,19 @@ If you would like to contribute to the Enhancing ReaxFF DFT Database by performi
 If you use the database or the tools provided in this repository for your work, please cite it using the following BibTeX entry:
 
 ```bibtex
-@misc{EnhReaxFFdatabase,
-  title        = {{Enhancing ReaxFF DFT database}},
-  author       = {De Angelis, Paolo and Cappabianca, Roberta and Asinari, Pietro and Chiavazzo, Eliodoro},
-  year         = {2023},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/paolodeangelis/Enhancing_ReaxFF_DFT_database},
-  url          = {https://github.com/paolodeangelis/Enhancing_ReaxFF_DFT_database},
-  doi          = {#TODO TO BE DEFINED}
+@dataset{EnhReaxFFdatabase,
+  author       = {De Angelis, Paolo and
+                  Cappabianca, Roberta and
+                  Fasano, Matteo and
+                  Asianri, Pietro and
+                  Chiavazzo, Chiavazzo},
+  title        = {Enhancing the ReaxFF DFT database},
+  month        = may,
+  year         = 2023,
+  publisher    = {Zenodo},
+  version      = {0.1.0},
+  doi          = {10.5072/zenodo.1204707},
+  url          = {https://doi.org/10.5072/zenodo.1204707}
 }
 ```
 

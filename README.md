@@ -175,7 +175,7 @@ If you use the database or the tools provided in this repository for your work, 
                   Cappabianca, Roberta and
                   Fasano, Matteo and
                   Asianri, Pietro and
-                  Chiavazzo, Chiavazzo},
+                  Chiavazzo, Eliodoro},
   title        = {{Enhancing the ReaxFF DFT database}},
   month        = may,
   year         = 2023,

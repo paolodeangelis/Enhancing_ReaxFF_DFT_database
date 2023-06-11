@@ -13,7 +13,7 @@
 
 
 This repository contains the database used to re-parametrize the ReaxFF force field for LiF, an inorganic compound.
-The purpose of the database is to improve the accuracy and reliability of ReaxFF calculations for LiF. The results and method used were published in the article [Enhancing ReaxFF for Lithium-ion battery simulations: An interactive reparameterization protocol][article-doi].
+The purpose of the database is to improve the accuracy and reliability of ReaxFF calculations for LiF. The results and method used were published in the article [Enhancing ReaxFF for Molecular Dynamics Simulations of Lithium-Ion Batteries: An interactive reparameterization protocol][article-doi].
 
 This database was made using the simulation obtained using the protocol published in [Enhancing ReaxFF repository][enhancing-reaxFF-repository].
 

@@ -152,7 +152,7 @@ from ase.db import connect
 db = connect("LiF.db")
 
 # Query the database
-results = db.select('success=True')
+results = db.select("success=True")
 
 # Iterate over the results
 for row in results:

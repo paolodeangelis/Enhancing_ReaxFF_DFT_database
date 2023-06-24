@@ -166,3 +166,6 @@ node_modules/
 package-lock.json
 temp.ipynb
 README.html
+README.tex
+README.md
+data/Untitled.ipynb

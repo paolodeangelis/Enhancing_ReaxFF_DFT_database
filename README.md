@@ -94,9 +94,9 @@ The repository has the following folder structure:
   * `browsing_db.ipynb`: This notebook demonstrates how to handle, select, read, and understand the data points in the `LiF.db` database using the ASE database Python interface. It serves as a guide for exploring and navigating the database effectively.
   * `running_simulation.ipynb`: In this notebook, you will find an example of how to get a data point from the `LiF.db` database and use it to perform a new simulation. The notebook showcases how to utilize either the [PLAMS](https://www.scm.com/doc/plams/index.html) library or the [AMSCalculator](https://www.scm.com/doc/plams/interfaces/amscalculator.html) and ASE Python library to conduct simulations based on the retrieved data and then store it as a new data point in the `LiF.db` database. It provides step-by-step instructions and code snippets for a seamless simulation workflow.
 * `tools`: This directory contains a collection of Python modules and scripts that are useful for reading, analyzing, and re-running simulations stored in the database. These tools are indispensable for ensuring that this repository adheres to the principles of **I**nteroperability and **R**eusability, as outlined by the [FAIR principles](https://www.go-fair.org/fair-principles/).
-  * `db`: This Python module provides functionalities for handling, reading, and storing data into the database.
-  * `plasm_experimental`: This Python module includes the necessary components for using the `AMSCalculator` with PLASM and the SCM software package, utilizing the ASE API. It facilitates running simulations, performing calculations.
-  * `scripts`: This directory contains additional scripts for dvanced usage scenarios of this repository.
+  * `db`: This Python module provides functionalities for handling, reading, and storing data in the database.
+  * `plasm_experimental`: This Python module includes the necessary components for using the `AMSCalculator` with PLASM and the SCM software package, utilizing the ASE API. It facilitates running simulations, and performing calculations.
+  * `scripts`: This directory contains additional scripts for advanced usage scenarios of this repository.
 
 ## Interacting with the Database
 
@@ -149,10 +149,10 @@ To interact with the database using the ASE Python interface, you can use the fo
 from ase.db import connect
 
 # Connect to the database
-db = connect("database.db")
+db = connect("LiF.db")
 
 # Query the database
-results = db.select('formula = "LiF"')
+results = db.select('success=True')
 
 # Iterate over the results
 for row in results:
@@ -167,14 +167,29 @@ If you would like to contribute to the Enhancing ReaxFF DFT Database by performi
 
 ## How to Cite
 
-If you use the database or the tools provided in this repository for your work, please cite it using the following BibTeX entry:
+If you use the database or the tools provided in this repository for your work, please cite it using the following BibTeX entries:
+
+```bibtex
+@article{deangelis2023enhancing,
+	title        = {Enhancing ReaxFF for Molecular Dynamics Simulations of Lithium-Ion Batteries: An interactive reparameterization protocol},
+  author       = {De Angelis, Paolo and
+                  Cappabianca, Roberta and
+                  Fasano, Matteo and
+                  Asinari, Pietro and
+                  Chiavazzo, Eliodoro},
+	year         = 2023,
+	eprint       = {2306.13027},
+	archiveprefix = {arXiv},
+	primaryclass = {cond-mat.mtrl-sci}
+}
+```
 
 ```bibtex
 @dataset{EnhReaxFFdatabase,
   author       = {De Angelis, Paolo and
                   Cappabianca, Roberta and
                   Fasano, Matteo and
-                  Asianri, Pietro and
+                  Asinari, Pietro and
                   Chiavazzo, Eliodoro},
   title        = {{Enhancing the ReaxFF DFT database}},
   month        = may,
@@ -224,6 +239,6 @@ The authors also acknowledge that the simulation results of this database have b
 
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-[article-doi]: https://doi.org/TBD
+[article-doi]: https://doi.org/10.48550/arXiv.2306.13027
 
 [enhancing-reaxFF-repository]: https://github.com/paolodeangelis/Enhancing_ReaxFF

@@ -171,16 +171,18 @@ If you use the database or the tools provided in this repository for your work, 
 
 ```bibtex
 @article{deangelis2023enhancing,
-	title        = {Enhancing ReaxFF for Molecular Dynamics Simulations of Lithium-Ion Batteries: An interactive reparameterization protocol},
-  author       = {De Angelis, Paolo and
-                  Cappabianca, Roberta and
-                  Fasano, Matteo and
-                  Asinari, Pietro and
-                  Chiavazzo, Eliodoro},
-	year         = 2023,
-	eprint       = {2306.13027},
-	archiveprefix = {arXiv},
-	primaryclass = {cond-mat.mtrl-sci}
+  title={Enhancing ReaxFF for molecular dynamics simulations of lithium-ion batteries: an interactive reparameterization protocol},
+  author={De Angelis, Paolo and 
+          Cappabianca, Roberta and 
+          Fasano, Matteo and 
+          Asinari, Pietro and 
+          Chiavazzo, Eliodoro},
+  journal={Scientific Reports},
+  volume={14},
+  number={1},
+  pages={978},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
 }
 ```
 
@@ -239,6 +241,6 @@ The authors also acknowledge that the simulation results of this database have b
 
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-[article-doi]: https://doi.org/10.48550/arXiv.2306.13027
+[article-doi]: https://doi.org/10.1038/s41598-023-50978-5
 
 [enhancing-reaxFF-repository]: https://github.com/paolodeangelis/Enhancing_ReaxFF

@@ -172,10 +172,10 @@ If you use the database or the tools provided in this repository for your work, 
 ```bibtex
 @article{deangelis2023enhancing,
   title={Enhancing ReaxFF for molecular dynamics simulations of lithium-ion batteries: an interactive reparameterization protocol},
-  author={De Angelis, Paolo and 
-          Cappabianca, Roberta and 
-          Fasano, Matteo and 
-          Asinari, Pietro and 
+  author={De Angelis, Paolo and
+          Cappabianca, Roberta and
+          Fasano, Matteo and
+          Asinari, Pietro and
           Chiavazzo, Eliodoro},
   journal={Scientific Reports},
   volume={14},

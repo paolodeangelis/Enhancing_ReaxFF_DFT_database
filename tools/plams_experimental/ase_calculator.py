@@ -7,6 +7,7 @@ Module Name: ase_calculator
 Authors: SCM (info@scm.com) (modified by Paolo De Angelis)
 Copyright (c) 2023 SCM-VN
 """
+
 from copy import deepcopy
 from typing import Any
 

@@ -9,6 +9,7 @@ Module Name: plams_experimental
 Authors: Paolo De Angelis (paolo.deangelis@polito.it)
 Copyright (c) 2023 Paolo De Angelis
 """
+
 from .ase_calculator import AMSCalculator
 
 __all__ = ["AMSCalculator"]

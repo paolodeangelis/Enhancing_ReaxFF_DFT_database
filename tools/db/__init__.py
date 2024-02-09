@@ -24,6 +24,7 @@ Module Name: db
 Authors: Paolo De Angelis (paolo.deangelis@polito.it)
 Copyright (c) 2023 Paolo De Angelis
 """
+
 from .metadata import (
     get_json_metadata,
     get_unique_values,

@@ -149,14 +149,17 @@ def download(url: str, fname: str, msg: str) -> None:
     """
     resp = requests.get(url, stream=True)
     total = int(resp.headers.get("content-length", 0))
-    with open(fname, "wb") as file, tqdm(
-        desc=msg,
-        total=total,
-        bar_format="{desc:<18} {percentage:3.0f}%|{bar:40}{r_bar}",
-        unit="iB",
-        unit_scale=True,
-        unit_divisor=1024,
-    ) as bar:
+    with (
+        open(fname, "wb") as file,
+        tqdm(
+            desc=msg,
+            total=total,
+            bar_format="{desc:<18} {percentage:3.0f}%|{bar:40}{r_bar}",
+            unit="iB",
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as bar,
+    ):
         for data in resp.iter_content(chunk_size=1024):
             size = file.write(data)
             bar.update(size)
@@ -172,14 +175,17 @@ def extractall(fzip: str, dest: str, msg: str = "Extracting") -> None:
         msg (str): Message to display during the extraction (default: 'Extracting').
     """
     dest_ = Path(dest).expanduser()
-    with ZipFile(fzip) as zipf, tqdm(
-        desc=msg,
-        unit="B",
-        unit_scale=True,
-        unit_divisor=1024,
-        bar_format="{desc:<18} {percentage:3.0f}%|{bar:40}{r_bar}",
-        total=sum(getattr(i, "file_size", 0) for i in zipf.infolist()),
-    ) as pbar:
+    with (
+        ZipFile(fzip) as zipf,
+        tqdm(
+            desc=msg,
+            unit="B",
+            unit_scale=True,
+            unit_divisor=1024,
+            bar_format="{desc:<18} {percentage:3.0f}%|{bar:40}{r_bar}",
+            total=sum(getattr(i, "file_size", 0) for i in zipf.infolist()),
+        ) as pbar,
+    ):
         for i in zipf.infolist():
             if not getattr(i, "file_size", 0):  # directory
                 zipf.extract(i, os.fspath(dest_))
